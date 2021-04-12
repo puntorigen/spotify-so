@@ -1,0 +1,41 @@
+{
+    "name": "spotify-so",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "nuxt-vuex-localstorage": "*",
+        "serverless-http": "*",
+        "node-sass": "*",
+        "v-mask": "*",
+        "serverless-apigw-binary": "*",
+        "nuxt": "*",
+        "vue-async-computed": "*",
+        "vue-moment": "*",
+        "express": "*",
+        "underscore": "*",
+        "aos": "*",
+        "vue-script2": "*",
+        "@nuxtjs/pwa": "*",
+        "vue-youtube-embed": "*",
+        "@nuxtjs/axios": "*"
+    },
+    "devDependencies": {
+        "serverless-offline": "*",
+        "serverless-prune-plugin": "*",
+        "vue-beautify-loader": "*",
+        "@nuxtjs/vuetify": "*"
+    },
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build --no-lock",
+        "start": "nuxt start --no-lock",
+        "generate": "nuxt generate",
+        "deploy": "nuxt build --no-lock && sls deploy",
+        "start-server": "npm run build && node app.js",
+        "start-sls": "npm run build && sls offline start"
+    },
+    "keywords": [],
+    "author": "Punto Origen SpA",
+    "license": "MIT"
+}

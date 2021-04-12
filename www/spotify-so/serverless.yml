@@ -1,0 +1,30 @@
+service: spotify-so
+
+custom:
+  prune:
+    automatic: true
+    includeLayers: true
+    number: 1
+  spotify_config: ${file(secrets/spotify_config.json)}
+  apigwBinary:
+    types:
+      - '*/*'
+
+provider:
+    name: aws
+    runtime: nodejs8.10
+    timeout: 30
+    environment:
+
+functions:
+  nuxt:
+    handler: index.nuxt
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}
+      - schedule: rate(20 minutes)
+
+plugins:
+  - serverless-apigw-binary
+  - serverless-offline
+  - serverless-prune-plugin
